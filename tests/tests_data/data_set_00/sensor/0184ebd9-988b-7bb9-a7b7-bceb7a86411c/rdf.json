@@ -1,0 +1,148 @@
+{
+  "@context": {
+    "dbo": "http://dbpedia.org/ontology/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "fst": "https://git.rwth-aachen.de/fst-tuda/.../",
+    "fst-sensor": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "quantitykind": "http://qudt.org/vocab/quantitykind/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+    "unit": "http://qudt.org/vocab/unit/",
+    "uuid": "urn:uuid:",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/Bias",
+      "@type": [
+        "ssn:Property",
+        "ssn-system:SystemProperty",
+        "schema:PropertyValue"
+      ],
+      "rdfs:label": "bias",
+      "schema:name": "offset",
+      "schema:value": 0
+    },
+    {
+      "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/rdf.xml",
+      "@type": "foaf:Document",
+      "foaf:primaryTopic": {
+        "@id": "fst-sensor:1ed6c963-669f-62b7-8af6-3727686f020d"
+      }
+    },
+    {
+      "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/rdf.json",
+      "@type": "foaf:Document",
+      "foaf:primaryTopic": {
+        "@id": "fst-sensor:1ed6c963-669f-62b7-8af6-3727686f020d"
+      }
+    },
+    {
+      "@id": "fst-sensor:1ed6c963-669f-62b7-8af6-3727686f020d",
+      "@type": [
+        "dcmitype:PhysicalObject",
+        "sosa:Sensor"
+      ],
+      "dbo:owner": "FST",
+      "dcterms:identifier": [
+        "1ed6c963-669f-62b7-8af6-3727686f020d",
+        "fst-inv:D117"
+      ],
+      "rdfs:comment": "Drucksensor",
+      "rdfs:label": "PAA-33X/10bar",
+      "schema:documentation": [
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory"
+        },
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory/datasheet.pdf"
+        }
+      ],
+      "schema:image": {
+        "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/link-to-image.jpg"
+      },
+      "schema:location": "Sirup Mischanlage",
+      "schema:manufacturer": "Keller",
+      "schema:serialNumber": "1011240",
+      "schema:subjectOf": [
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/link-to-image.jpg"
+        },
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory"
+        },
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory/datasheet.pdf"
+        }
+      ],
+      "ssn-system:hasSystemCapability": {
+        "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/SensorCapability"
+      }
+    },
+    {
+      "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/SensorCapability",
+      "@type": [
+        "ssn:Property",
+        "ssn-system:SystemCapability"
+      ],
+      "rdfs:comment": "sensor capabilities not regarding any conditions at this time",
+      "rdfs:label": "sensor capabilities",
+      "ssn-system:hasSystemProperty": [
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/MeasurementRange"
+        },
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/Sensitivity"
+        },
+        {
+          "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/Bias"
+        }
+      ]
+    },
+    {
+      "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/Sensitivity",
+      "@type": [
+        "ssn:Property",
+        "ssn-system:Sensitivity",
+        "schema:PropertyValue"
+      ],
+      "rdfs:label": "sensitivity",
+      "schema:name": "gain",
+      "schema:value": 1
+    },
+    {
+      "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/MeasurementRange",
+      "@type": [
+        "ssn:Property",
+        "ssn-system:MeasurementRange",
+        "qudt:Quantity"
+      ],
+      "qudt:hasQuantityKind": {
+        "@id": "quantitykind:Pressure"
+      },
+      "qudt:unit": {
+        "@id": "unit:BAR"
+      },
+      "rdfs:comment": "absolute pressure",
+      "rdfs:label": "measurement range",
+      "schema:maxValue": 10,
+      "schema:minValue": 0
+    },
+    {
+      "@id": "https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/1ed6c963-669f-62b7-8af6-3727686f020d/rdf.ttl",
+      "@type": "foaf:Document",
+      "foaf:primaryTopic": {
+        "@id": "fst-sensor:1ed6c963-669f-62b7-8af6-3727686f020d"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+# This README.md was created to be able to version control the parent directory. That parent directory corresponds to a single sensor at the FST. This README.md file might be extended by useful information, and/or wil be replaced by machine readable files like .owl, .ttl, .json (and so on) in the future.

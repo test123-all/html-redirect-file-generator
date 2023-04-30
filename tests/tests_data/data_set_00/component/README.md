@@ -1,0 +1,1 @@
+# This README.md was created to be able to version control the parent directory. That parent directory corresponds to components at the FST. This README.md file might be extended by useful information, or will get deleted in the future.
