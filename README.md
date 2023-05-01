@@ -21,6 +21,6 @@ options:
 2. The package is a first minimal working example and the code is not documented properly and the code still needs to be refactored.
 
 ## Current Maintainers:
-nils.preussatfst.tu-darmstadt.de
-martin.hockatfst.tu-darmstadt.de
+nils.preussatfst.tu-darmstadt.de <br>
+martin.hockatfst.tu-darmstadt.de <br>
 sebastian.neumeieratstud.tu-darmstadt.de
