@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "data-repository-site-generator"
+version = "0.1.0"
+description = ""
+authors = ["Sebastian Neumeier <neumeise1@mail.de>"]
+readme = "README.md"
+packages = [{include = "data_repository_site_generator"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+requests = "^2.29.0"
+beautifulsoup4 = "^4.12.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
