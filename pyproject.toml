@@ -2,7 +2,7 @@
 name = "data-repository-site-generator"
 version = "0.1.0"
 description = ""
-authors = ["Sebastian Neumeier <neumeise1@mail.de>"]
+authors = ["Sebastian Neumeier <sebastian.neumeier@stud.tu-darmstadt.de>"]
 readme = "README.md"
 packages = [{include = "data_repository_site_generator"}]
 
