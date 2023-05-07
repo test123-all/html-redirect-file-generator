@@ -1,4 +1,4 @@
-image: python:3.10.11
+image: ubuntu:22.04
 
 variables:
     GIT_SUBMODULE_STRATEGY: recursive
