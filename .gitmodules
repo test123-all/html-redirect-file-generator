@@ -1,6 +1,6 @@
 [submodule "tests/tests_data/data_set_02_data_repository_site_generator"]
 	path = tests/tests_data/data_set_02_data_repository_site_generator
-	url = git@git.rwth-aachen.de:fst-tuda/projects/designing-with-fluids/hydropulser/data_set_02_data_repository_site_generator.git
+	url = git@git.rwth-aachen.de:fst-tuda/projects/rdm/metadata_repo_site/data_set_02_data_repository_site_generator.git
 [submodule "tests/tests_data/data_set_01_data_repository_site_generator"]
 	path = tests/tests_data/data_set_01_data_repository_site_generator
-	url = git@git.rwth-aachen.de:fst-tuda/projects/designing-with-fluids/hydropulser/data_set_01_data_repository_site_generator.git
+	url = git@git.rwth-aachen.de:fst-tuda/projects/rdm/metadata_repo_site/data_set_01_data_repository_site_generator.git
