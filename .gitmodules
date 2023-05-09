@@ -4,9 +4,9 @@
 [submodule "tests/tests_submodule/public-external-repo"]
 	path = tests/tests_submodule/public-external-repo
 	url = https://gitlab.com/pages/plain-html.git
-[submodule "tests/tests_data/data_set_02_data_repository_site_generator"]
-	path = tests/tests_data/data_set_02_data_repository_site_generator
-	url = ../data_set_02_data_repository_site_generator.git
-[submodule "tests/tests_data/data_set_01_data_repository_site_generator"]
-	path = tests/tests_data/data_set_01_data_repository_site_generator
-	url = ../data_set_01_data_repository_site_generator.git
+#[submodule "tests/tests_data/data_set_02_data_repository_site_generator"]
+#	path = tests/tests_data/data_set_02_data_repository_site_generator
+#	url = ../data_set_02_data_repository_site_generator.git
+#[submodule "tests/tests_data/data_set_01_data_repository_site_generator"]
+#	path = tests/tests_data/data_set_01_data_repository_site_generator
+#	url = ../data_set_01_data_repository_site_generator.git
