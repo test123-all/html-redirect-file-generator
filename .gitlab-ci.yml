@@ -13,7 +13,8 @@ stages:
 setup:
     stage:  set_up_environment
     needs: []
-    tags: env:docker
+    tags: 
+        - env:docker
     script:
         - pip install poetry
         - poetry install
