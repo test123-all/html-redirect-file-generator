@@ -4,9 +4,19 @@ variables:
     GIT_SUBMODULE_STRATEGY: recursive
     GIT_SUBMODULE_FORCE_HTTPS: "true"
     GIT_STRATEGY: clone
+
+
 stages:
+- setup_environment
 - testing
 
+setup:
+    stage:
+    needs: []
+    tags: env:docker
+    script:
+        - pip install poetry
+        - poetry install
 
 test:
     stage: testing
@@ -14,7 +24,5 @@ test:
     tags:
         - env:docker
     script:
-        - pip install poetry
-        - poetry install
         - poetry run python -m unittest discover -s tests/ -t tests/
 
