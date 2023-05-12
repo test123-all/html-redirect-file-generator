@@ -14,6 +14,7 @@ test:
     tags:
         - env:docker
     script:
-        - pip install pyproject.toml
-        - python -m unittest discover -s tests/ -t tests/
+        - pip install poetry
+        - poetry install .
+        - poetry run python -m unittest discover -s tests/ -t tests/
 
