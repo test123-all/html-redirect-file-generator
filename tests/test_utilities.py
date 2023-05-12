@@ -66,7 +66,7 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
 
         target_output_URL_path_pairs_list = [
             {
-            'repository_URL': 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator',
+            'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_repository_site_generator',
             'path': input_data_path
             }
         ]
@@ -77,19 +77,19 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
     def test_01(self):
         target_output_URL_path_pairs_list = [
             {
-                'repository_URL': 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator',
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_repository_site_generator',
                 'path': input_data_path
             },
             {
-                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/designing-with-fluids/hydropulser/data_set_02_data_repository_site_generator',
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_set_02_data_repository_site_generator',
                 'path': f'{input_data_path}/data_set_02_data_repository_site_generator'
             },
             {
-                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/designing-with-fluids/hydropulser/data_subset_manufacturer_03_data_repository_site_generator',
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_subset_manufacturer_03_data_repository_site_generator',
                 'path': f'{input_data_path}/data_set_02_data_repository_site_generator/sensor/data_subset_manufacturer_03_data_repository_site_generator'
             },
             {
-                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/designing-with-fluids/hydropulser/data_set_01_data_repository_site_generator',
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_set_01_data_repository_site_generator',
                 'path': f'{input_data_path}/data_set_01_data_repository_site_generator'
             }
         ]
