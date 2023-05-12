@@ -9,7 +9,7 @@ from data_repository_site_generator import utilities
 
 
 # Get the test path
-directory_path_of_this_test_file = Path('__file__').parent.resolve()
+directory_path_of_this_test_file = Path(__file__).parent.resolve()
 
 input_data_path: str = f'{directory_path_of_this_test_file}/tests_data'
 output_generated_files_directory_path: str = f'{directory_path_of_this_test_file}/_generated'
