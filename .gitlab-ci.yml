@@ -7,11 +7,11 @@ variables:
 
 
 stages:
-- setup_environment
+- set_up_environment
 - testing
 
 setup:
-    stage:
+    stage:  set_up_environment
     needs: []
     tags: env:docker
     script:
