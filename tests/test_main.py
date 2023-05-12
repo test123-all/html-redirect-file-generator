@@ -8,6 +8,7 @@ import subprocess
 directory_path_of_this_test_file = Path('__file__').parent.resolve()
 
 input_data_path: str = f'{directory_path_of_this_test_file}/tests_data'
+print(input_data_path)
 output_generated_files_directory_path: str = f'{directory_path_of_this_test_file}/_generated'
 
 class TestCLI(unittest.TestCase):
