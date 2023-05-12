@@ -14,5 +14,6 @@ test:
     tags:
         - env:docker
     script:
+        - pip install pyproject.toml
         - python -m unittest discover -s tests/ -t tests/
 
