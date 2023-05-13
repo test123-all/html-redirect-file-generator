@@ -45,7 +45,7 @@ class TestUtilities(unittest.TestCase):
 
     def test_format_git_repository_URL_to_https_04(self):
         # Test for URLs wit a token like the ones from GitLab
-        input_URL = b'https://gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator\n'
+        input_URL = b'https://gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator.git\n'
         target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator'
 
         # Test the function for correct output.

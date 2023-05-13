@@ -58,6 +58,7 @@ def format_git_repository_URL_to_https(URL: bytes) -> str:
             and not 'git@' in decoded_URL):
         formatted_URL = decoded_URL.split('@')[-1]
         formatted_URL = formatted_URL.replace('\n', '')
+        formatted_URL = formatted_URL.replace('.git', '')
         formatted_https_URL = f'https://{formatted_URL}'
 
     elif 'git@' in decoded_URL:
