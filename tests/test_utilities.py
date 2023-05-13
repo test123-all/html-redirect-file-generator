@@ -51,6 +51,14 @@ class TestUtilities(unittest.TestCase):
         # Test the function for correct output.
         self.assertEqual(target_output_URL, utilities.format_git_repository_URL_to_https(input_URL))
 
+    def test_format_git_repository_URL_to_https_05(self):
+        # Test for git-URLs wit a token like the ones from GitLab
+        input_URL = b'git@gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator.git\n'
+        target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator'
+
+        # Test the function for correct output.
+        self.assertEqual(target_output_URL, utilities.format_git_repository_URL_to_https(input_URL))
+
 
 class Test_search_for_hidden_git_directories(unittest.TestCase):
     def test_00(self):
