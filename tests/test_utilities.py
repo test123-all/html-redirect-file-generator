@@ -69,6 +69,8 @@ class Test_search_for_hidden_git_directories(unittest.TestCase):
         self.assertEqual(target_output_hidden_git_directories_list__paths.sort(), output_hidden_git_directories_list__paths.sort())
 
 class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
+    maxDiff = None
+
     def test_00(self):
         input_data_path: str = f'{directory_path_of_this_test_file}/tests_data/data_set_00'
 
