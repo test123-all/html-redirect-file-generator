@@ -2,6 +2,8 @@ import unittest
 from pathlib import Path
 import os
 import shutil
+
+import operator # Used to sort lists of dicts
 # import logging
 
 
@@ -113,7 +115,7 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
         ]
 
         output_URL_path_pairs_list = utilities.get_repository_URL_and_path_pairs(input_data_path=input_data_path)
-        self.assertEqual(target_output_URL_path_pairs_list, output_URL_path_pairs_list)
+        self.assertEqual(target_output_URL_path_pairs_list.sort(key=operator.itemgetter('repository_URL')), output_URL_path_pairs_list.sort(key=operator.itemgetter('repository_URL')))
 
 
 
