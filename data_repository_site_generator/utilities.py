@@ -52,7 +52,15 @@ def format_git_repository_URL_to_https(URL: bytes) -> str:
 
     # Remove special characters
     # Decide wether it is a git or https URL
-    if 'git@' in decoded_URL:
+    # TODO: WARN: Since there are two functions that split on a @ this might cause serious problems! I don't have
+    #             enough testcases at hand at the moment to test all possibilities thoroughly.
+    if ('gitlab-ci-token' in decoded_URL
+            and not 'git@' in decoded_URL):
+        formatted_URL = decoded_URL.split('@')[-1]
+        formatted_URL = formatted_URL.replace('\n', '')
+        formatted_https_URL = f'https://{formatted_URL}'
+
+    elif 'git@' in decoded_URL:
         formatted_URL = decoded_URL.split('@')[-1].replace(':', '/')
         formatted_URL = formatted_URL.replace('\n', '')
         formatted_URL = formatted_URL.replace('.git', '')
