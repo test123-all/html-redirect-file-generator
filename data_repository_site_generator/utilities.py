@@ -139,9 +139,19 @@ def get_leaf_ID_directories_list(data_repository_URL_path_pairs_list: list) -> l
             if continueFlag == 1:
                 continue
 
-            # If (the traversed directory doesn't have any subdirectories)
+            # If (the traversed directory doesn't have any subdirectories) (-> verworfen)
             #     AND the contained number of files is bigger than one (for example if there is only the README.md)
-            if not item[1] and len(item[2]) > 1:
+            # if not item[1] and len(item[2]) > 1:
+            #     leaf_ID_directories_dict_list.append({
+            #                                      'item_tuple': item,
+            #                                      'repository_URL': data_repository_URL_path_pair['repository_URL']
+            #                                     }
+            #     )
+
+            # If (the traversed directory name is a UUID)
+            #             #     AND the contained number of files is bigger than one (for example if there is only the README.md)
+            directory_name = item[0].split('/')[-1]
+            if check_if_string_is_UUID(directory_name) and len(item[2]) > 1:
                 leaf_ID_directories_dict_list.append({
                                                  'item_tuple': item,
                                                  'repository_URL': data_repository_URL_path_pair['repository_URL']
