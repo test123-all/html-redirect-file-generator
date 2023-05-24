@@ -62,6 +62,35 @@ class TestUtilities(unittest.TestCase):
         self.assertEqual(target_output_URL, utilities.format_git_repository_URL_to_https(input_URL))
 
 
+class Test_check_if_string_is_UUID(unittest.TestCase):
+    def test_00(self):
+        UUID_string = '0184ebd9-988b-7bba-83e4-e24d90bf1352'
+
+        # Test the function for correct output.
+        self.assertTrue(utilities.check_if_string_is_UUID(UUID_string))
+
+    def test_01(self):
+        UUID_string = '1ed6c963-669f-62b7-8af6-3727686f020d'
+
+        # Test the function for correct output.
+        self.assertTrue(utilities.check_if_string_is_UUID(UUID_string))
+
+    def test_02(self):
+        # Wrong quantity of hex decimal digits in the last block
+        wrong_UUID_string = '0184ebd9-988b-7bba-83e4-90bf1352'
+
+        # Test the function for correct output.
+        self.assertFalse(utilities.check_if_string_is_UUID(wrong_UUID_string))
+
+    def test_03(self):
+        # Wrong quantity of hex decimal blocks
+        wrong_UUID_string = '0184ebd9-988b-7bba83e4-90bf1352'
+
+        # Test the function for correct output.
+        self.assertFalse(utilities.check_if_string_is_UUID(wrong_UUID_string))
+
+
+
 class Test_search_for_hidden_git_directories(unittest.TestCase):
     def test_00(self):
         input_data_path: [str, path] = Path(f'{directory_path_of_this_test_file}/tests_data').resolve()
@@ -122,7 +151,7 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
 class Test_get_leaf_ID_directories_list(unittest.TestCase):
     def test_00(self):
         """ Check number of ID folders"""
-        TARGET_NUMBER_ID_DIRECTORIES = 20
+        TARGET_NUMBER_ID_DIRECTORIES = 21
 
         input_data_path: str = f'{directory_path_of_this_test_file}/tests_data'
 
@@ -212,6 +241,6 @@ class Test_generate_html_redirect_files_for_every_file_in_leaf_ID_directories(un
     def test_01(self):
         """ Check number of generated .html files"""
         html_files_per_ID_directory = 5
-        target_number_generated_html_files = 20 * html_files_per_ID_directory
+        target_number_generated_html_files = 21 * html_files_per_ID_directory
 
         self.assertEqual(target_number_generated_html_files, len(os.listdir(self.output_generated_files_directory_path_fdd_test)))

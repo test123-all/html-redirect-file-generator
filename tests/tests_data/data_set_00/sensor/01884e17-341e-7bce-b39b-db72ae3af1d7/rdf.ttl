@@ -1,0 +1,100 @@
+BASE <https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dcmitype: <http://purl.org/dc/dcmitype/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX fst-sensor: <https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/>
+PREFIX quantitykind: <http://qudt.org/vocab/quantitykind/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX ssn-system: <http://www.w3.org/ns/ssn/systems/>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<1ed6c963-669f-62b7-8af6-3727686f020d/rdf.json>
+    a foaf:Document ;
+    foaf:primaryTopic <1ed6c963-669f-62b7-8af6-3727686f020d> ;
+.
+
+<1ed6c963-669f-62b7-8af6-3727686f020d/rdf.ttl>
+    a foaf:Document ;
+    foaf:primaryTopic <1ed6c963-669f-62b7-8af6-3727686f020d> ;
+.
+
+<1ed6c963-669f-62b7-8af6-3727686f020d/rdf.xml>
+    a foaf:Document ;
+    foaf:primaryTopic <1ed6c963-669f-62b7-8af6-3727686f020d> ;
+.
+
+<1ed6c963-669f-62b7-8af6-3727686f020d/Bias>
+    a
+        ssn:Property ,
+        ssn-system:SystemProperty ,
+        schema:PropertyValue ;
+    rdfs:label "bias" ;
+    schema:name "offset" ;
+    schema:value 0 ;
+.
+
+<1ed6c963-669f-62b7-8af6-3727686f020d/MeasurementRange>
+    a
+        qudt:Quantity ,
+        ssn:Property ,
+        ssn-system:MeasurementRange ;
+    rdfs:label "measurement range" ;
+    qudt:hasQuantityKind quantitykind:Pressure ;
+    qudt:unit unit:BAR ;
+    rdfs:comment "absolute pressure" ;
+    schema:maxValue 10 ;
+    schema:minValue 0 ;
+.
+
+<1ed6c963-669f-62b7-8af6-3727686f020d/Sensitivity>
+    a
+        ssn:Property ,
+        ssn-system:Sensitivity ,
+        schema:PropertyValue ;
+    rdfs:label "sensitivity" ;
+    schema:name "gain" ;
+    schema:value 1 ;
+.
+
+<1ed6c963-669f-62b7-8af6-3727686f020d/SensorCapability>
+    a
+        ssn:Property ,
+        ssn-system:SystemCapability ;
+    rdfs:label "sensor capabilities" ;
+    rdfs:comment "sensor capabilities not regarding any conditions at this time" ;
+    ssn-system:hasSystemProperty
+        <1ed6c963-669f-62b7-8af6-3727686f020d/Bias> ,
+        <1ed6c963-669f-62b7-8af6-3727686f020d/MeasurementRange> ,
+        <1ed6c963-669f-62b7-8af6-3727686f020d/Sensitivity> ;
+.
+
+<1ed6c963-669f-62b7-8af6-3727686f020d>
+    a
+        dcmitype:PhysicalObject ,
+        sosa:Sensor ;
+    rdfs:label "PAA-33X/10bar" ;
+    dbo:owner "FST" ;
+    dcterms:identifier
+        "1ed6c963-669f-62b7-8af6-3727686f020d" ,
+        "fst-inv:D117" ;
+    rdfs:comment "Drucksensor" ;
+    ssn-system:hasSystemCapability <1ed6c963-669f-62b7-8af6-3727686f020d/SensorCapability> ;
+    schema:documentation
+        <1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory> ,
+        <1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory/datasheet.pdf> ;
+    schema:image <1ed6c963-669f-62b7-8af6-3727686f020d/link-to-image.jpg> ;
+    schema:location "Sirup Mischanlage" ;
+    schema:manufacturer "Keller" ;
+    schema:serialNumber "1011240" ;
+    schema:subjectOf
+        <1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory> ,
+        <1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory/datasheet.pdf> ,
+        <1ed6c963-669f-62b7-8af6-3727686f020d/link-to-image.jpg> ;
+.
+
