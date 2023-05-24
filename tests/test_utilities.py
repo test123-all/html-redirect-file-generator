@@ -151,7 +151,7 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
 class Test_get_leaf_ID_directories_list(unittest.TestCase):
     def test_00(self):
         """ Check number of ID folders"""
-        TARGET_NUMBER_ID_DIRECTORIES = 20
+        TARGET_NUMBER_ID_DIRECTORIES = 21
 
         input_data_path: str = f'{directory_path_of_this_test_file}/tests_data'
 
@@ -241,6 +241,6 @@ class Test_generate_html_redirect_files_for_every_file_in_leaf_ID_directories(un
     def test_01(self):
         """ Check number of generated .html files"""
         html_files_per_ID_directory = 5
-        target_number_generated_html_files = 20 * html_files_per_ID_directory
+        target_number_generated_html_files = 21 * html_files_per_ID_directory
 
         self.assertEqual(target_number_generated_html_files, len(os.listdir(self.output_generated_files_directory_path_fdd_test)))

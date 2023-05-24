@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xml:base="https://git.rwth-aachen.de/fst-tuda/projects/rdm/datasheets-mockup/-/blob/main/sensor/"
+   xmlns:dbo="http://dbpedia.org/ontology/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:qudt="http://qudt.org/schema/qudt/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema="https://schema.org/"
+   xmlns:ssn-system="http://www.w3.org/ns/ssn/systems/"
+>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d/Bias">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/systems/SystemProperty"/>
+    <rdf:type rdf:resource="https://schema.org/PropertyValue"/>
+    <rdfs:label>bias</rdfs:label>
+    <schema:name>offset</schema:name>
+    <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</schema:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d/rdf.xml">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <foaf:primaryTopic rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d/rdf.ttl">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <foaf:primaryTopic rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d/SensorCapability">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/systems/SystemCapability"/>
+    <rdfs:label>sensor capabilities</rdfs:label>
+    <rdfs:comment>sensor capabilities not regarding any conditions at this time</rdfs:comment>
+    <ssn-system:hasSystemProperty rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/MeasurementRange"/>
+    <ssn-system:hasSystemProperty rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/Sensitivity"/>
+    <ssn-system:hasSystemProperty rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/Bias"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d/Sensitivity">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/systems/Sensitivity"/>
+    <rdf:type rdf:resource="https://schema.org/PropertyValue"/>
+    <rdfs:label>sensitivity</rdfs:label>
+    <schema:name>gain</schema:name>
+    <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</schema:value>
+  </rdf:Description>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d/rdf.json">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+    <foaf:primaryTopic rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d/MeasurementRange">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/systems/MeasurementRange"/>
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt/Quantity"/>
+    <rdfs:label>measurement range</rdfs:label>
+    <rdfs:comment>absolute pressure</rdfs:comment>
+    <qudt:hasQuantityKind rdf:resource="http://qudt.org/vocab/quantitykind/Pressure"/>
+    <qudt:unit rdf:resource="http://qudt.org/vocab/unit/BAR"/>
+    <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</schema:minValue>
+    <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</schema:maxValue>
+  </rdf:Description>
+  <rdf:Description rdf:about="1ed6c963-669f-62b7-8af6-3727686f020d">
+    <rdf:type rdf:resource="http://purl.org/dc/dcmitype/PhysicalObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    <rdfs:label>PAA-33X/10bar</rdfs:label>
+    <rdfs:comment>Drucksensor</rdfs:comment>
+    <dcterms:identifier>1ed6c963-669f-62b7-8af6-3727686f020d</dcterms:identifier>
+    <dcterms:identifier>fst-inv:D117</dcterms:identifier>
+    <dbo:owner>FST</dbo:owner>
+    <schema:manufacturer>Keller</schema:manufacturer>
+    <schema:serialNumber>1011240</schema:serialNumber>
+    <schema:location>Sirup Mischanlage</schema:location>
+    <ssn-system:hasSystemCapability rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/SensorCapability"/>
+    <schema:subjectOf rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/link-to-image.jpg"/>
+    <schema:subjectOf rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory"/>
+    <schema:subjectOf rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory/datasheet.pdf"/>
+    <schema:image rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/link-to-image.jpg"/>
+    <schema:documentation rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory"/>
+    <schema:documentation rdf:resource="1ed6c963-669f-62b7-8af6-3727686f020d/link-to-doc-directory/datasheet.pdf"/>
+  </rdf:Description>
+</rdf:RDF>
