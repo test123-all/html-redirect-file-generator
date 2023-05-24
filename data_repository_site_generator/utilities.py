@@ -95,6 +95,24 @@ def get_customized_html_template(url: str) -> str:
     return html_file_redirect_template
 
 
+def check_if_string_is_UUID(input_string: str) -> bool:
+    # 8-4-4-4-12
+    seperated_string = input_string.split('-')
+
+    if len(seperated_string) != 5:
+        return False
+
+    if not (    len(seperated_string[0]) == 8
+                and len(seperated_string[1]) == 4
+                and len(seperated_string[2]) == 4
+                and len(seperated_string[3]) == 4
+                and len(seperated_string[4]) == 12
+            ):
+        return False
+
+    return True
+
+
 def get_leaf_ID_directories_list(data_repository_URL_path_pairs_list: list) -> list:
     leaf_ID_directories_dict_list = []
 
