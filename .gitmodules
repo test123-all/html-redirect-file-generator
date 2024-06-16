@@ -1,11 +1,11 @@
-[submodule "tests/tests_data/data_set_02_data_repository_site_generator"]
-	path = tests/tests_data/data_set_02_data_repository_site_generator
-	url = git@git.rwth-aachen.de:fst-tuda/projects/rdm/metadata_repo_site/data_set_02_data_repository_site_generator.git
-	url = ../data_set_02_data_repository_site_generator.git
-[submodule "tests/tests_data/data_set_01_data_repository_site_generator"]
-	path = tests/tests_data/data_set_01_data_repository_site_generator
-	url = git@git.rwth-aachen.de:fst-tuda/projects/rdm/metadata_repo_site/data_set_01_data_repository_site_generator.git
-	url = ../data_set_01_data_repository_site_generator.git
+[submodule "tests/tests_data/data_set_02_data_repository_html_redirect_file_generator"]
+	path = tests/tests_data/data_set_02_data_repository_html_redirect_file_generator
+	url = git@git.rwth-aachen.de:fst-tuda/public/html-redirect-file-generator/data_set_02_data_repository_html_redirect_file_generator.git
+	url = ../data_set_02_data_repository_html_redirect_file_generator.git
+[submodule "tests/tests_data/data_set_01_data_repository_html_redirect_file_generator"]
+	path = tests/tests_data/data_set_01_data_repository_html_redirect_file_generator
+	url = git@git.rwth-aachen.de:fst-tuda/public/html-redirect-file-generator/data_set_01_data_repository_html_redirect_file_generator.git
+	url = ../data_set_01_data_repository_html_redirect_file_generator.git
 
 
 
