@@ -4,7 +4,7 @@ import os
 import shutil
 
 
-from data_repository_site_generator import utilities
+from html_redirect_file_generator import utilities
 
 def setup_CLI() -> list:
     parser = argparse.ArgumentParser()

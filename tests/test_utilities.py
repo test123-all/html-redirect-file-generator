@@ -7,7 +7,7 @@ import operator # Used to sort lists of dicts
 # import logging
 
 
-from data_repository_site_generator import utilities
+from html_redirect_file_generator import utilities
 
 
 # Get the test path
