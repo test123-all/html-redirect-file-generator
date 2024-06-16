@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "data-repository-site-generator"
+name = "html-redirect-file-generator"
 version = "0.1.0"
 description = ""
 authors = ["Sebastian Neumeier <sebastian.neumeier@stud.tu-darmstadt.de>"]
 readme = "README.md"
-packages = [{include = "data_repository_site_generator"}]
+packages = [{include = "html_redirect_file_generator"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
