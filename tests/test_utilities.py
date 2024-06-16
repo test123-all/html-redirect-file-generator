@@ -18,8 +18,8 @@ output_generated_files_directory_path: str = f'{directory_path_of_this_test_file
 
 class TestUtilities(unittest.TestCase):
     def test_format_git_repository_URL_to_https_00(self):
-        input_URL = b'git@git.rwth-aachen.de:sebastian.neumeier/data_repository_site_generator.git\n'
-        target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator'
+        input_URL = b'git@git.rwth-aachen.de:sebastian.neumeier/html-redirect-file-generator.git\n'
+        target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator'
 
         # Test the function for correct output.
         self.assertEqual(target_output_URL, utilities.format_git_repository_URL_to_https(input_URL))
@@ -47,16 +47,16 @@ class TestUtilities(unittest.TestCase):
 
     def test_format_git_repository_URL_to_https_04(self):
         # Test for URLs wit a token like the ones from GitLab
-        input_URL = b'https://gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator.git\n'
-        target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator'
+        input_URL = b'https://gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator.git\n'
+        target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator'
 
         # Test the function for correct output.
         self.assertEqual(target_output_URL, utilities.format_git_repository_URL_to_https(input_URL))
 
     def test_format_git_repository_URL_to_https_05(self):
         # Test for git-URLs wit a token like the ones from GitLab
-        input_URL = b'git@gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator.git\n'
-        target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator'
+        input_URL = b'git@gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator.git\n'
+        target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator'
 
         # Test the function for correct output.
         self.assertEqual(target_output_URL, utilities.format_git_repository_URL_to_https(input_URL))
@@ -95,9 +95,9 @@ class Test_search_for_hidden_git_directories(unittest.TestCase):
     def test_00(self):
         input_data_path: [str, path] = Path(f'{directory_path_of_this_test_file}/tests_data').resolve()
 
-        target_output_hidden_git_directories_list__paths = [f'{directory_path_of_this_test_file}/tests_data/data_set_01_data_repository_site_generator/',
-                                                            f'{directory_path_of_this_test_file}/tests_data/data_set_02_data_repository_site_generator/',
-                                                            f'{directory_path_of_this_test_file}/tests_data/data_set_02_data_repository_site_generator/sensor/data_subset_manufacturer_03_data_repository_site_generator/']
+        target_output_hidden_git_directories_list__paths = [f'{directory_path_of_this_test_file}/tests_data/data_set_01_data_repository_html_redirect_file_generator/',
+                                                            f'{directory_path_of_this_test_file}/tests_data/data_set_02_data_repository_html_redirect_file_generator/',
+                                                            f'{directory_path_of_this_test_file}/tests_data/data_set_02_data_repository_html_redirect_file_generator/sensor/data_subset_manufacturer_03_data_repository_html_redirect_file_generator/']
 
         output_hidden_git_directories_list = utilities.search_for_hidden_git_directories(input_data_path)
 
@@ -115,7 +115,7 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
 
         target_output_URL_path_pairs_list = [
             {
-            'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_repository_site_generator',
+            'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/public/html-redirect-file-generator/html-redirect-file-generator',
             'path': input_data_path
             }
         ]
@@ -126,20 +126,20 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
     def test_01(self):
         target_output_URL_path_pairs_list = [
             {
-                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_repository_site_generator',
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/public/html-redirect-file-generator/html-redirect-file-generator',
                 'path': input_data_path
             },
             {
-                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_set_02_data_repository_site_generator',
-                'path': f'{input_data_path}/data_set_02_data_repository_site_generator'
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/public/html-redirect-file-generator/data_set_02_data_repository_html_redirect_file_generator',
+                'path': f'{input_data_path}/data_set_02_data_repository_html_redirect_file_generator'
             },
             {
-                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_subset_manufacturer_03_data_repository_site_generator',
-                'path': f'{input_data_path}/data_set_02_data_repository_site_generator/sensor/data_subset_manufacturer_03_data_repository_site_generator'
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/public/html-redirect-file-generator/data_subset_manufacturer_03_data_repository_html_redirect_file_generator',
+                'path': f'{input_data_path}/data_set_02_data_repository_html_redirect_file_generator/sensor/data_subset_manufacturer_03_data_repository_html_redirect_file_generator'
             },
             {
-                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/projects/rdm/metadata_repo_site/data_set_01_data_repository_site_generator',
-                'path': f'{input_data_path}/data_set_01_data_repository_site_generator'
+                'repository_URL': 'https://git.rwth-aachen.de/fst-tuda/public/html-redirect-file-generator/data_set_01_data_repository_html_redirect_file_generator',
+                'path': f'{input_data_path}/data_set_01_data_repository_html_redirect_file_generator'
             }
         ]
 
@@ -163,13 +163,13 @@ class Test_get_leaf_ID_directories_list(unittest.TestCase):
 
 class Test__generate_html_redirect_files_for_every_file_in_leaf_ID_directory(unittest.TestCase):
     example_tuple = (
-    '/home/sebastian/Desktop/data_repository_site_generator/tests/tests_data/data_set_00/sensor/0184ebd9-988b-7bb9-a9f3-2a3cfc1631c3',
+    '/home/sebastian/Desktop/html-redirect-file-generator/tests/tests_data/data_set_00/sensor/0184ebd9-988b-7bb9-a9f3-2a3cfc1631c3',
     [],
     ['rdf.ttl', 'README.md', 'rdf.json', 'rdf.xml']
     )
 
     leaf_ID_directory_dict_item = {'item_tuple': example_tuple,
-                                   'repository_URL': 'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator'
+                                   'repository_URL': 'https://git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator'
 
     }
 
@@ -198,7 +198,7 @@ class Test__generate_html_redirect_files_for_every_file_in_leaf_ID_directory(uni
 
     def test_01(self):
         """ Check if the .html files contain the correct redirect URL"""
-        repository_URL = f'https://git.rwth-aachen.de/sebastian.neumeier/data_repository_site_generator'
+        repository_URL = f'https://git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator'
         repository_file_path = 'tests/tests_data/data_set_00/sensor/0184ebd9-988b-7bb9-a9f3-2a3cfc1631c3'
         for file_name in self.target_files_list:
             with Path(f'{self.output_generated_files_directory_path_olID_test}/{file_name}').open('r') as f:
