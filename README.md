@@ -26,3 +26,10 @@ As of the current plans the refactoring work will be done somewhere between the 
 
 ## Current Maintainers:
 sebastian.neumeieratstud.tu-darmstadt.de
+
+## Creators:
+This software was originally created by: <br>
+**Sebastian Neumeier (https://orcid.org/0000-0001-9533-9004)**:  Conceptualization, Implementation, Documentation <br>
+**Nils Preuß (https://orcid.org/0000-0002-6793-8533)**: Project Manager, Provider of the first raw idea of a better redirect service and its requirements and constraints <br>
+**Martin Hock (https://orcid.org/0000-0001-9917-3152)**: Support for the GitLab CI/CD Pipeline Technology <br>
+**Manuel Rexer (https://orcid.org/0000-0003-0559-1156)**: Provider of Use Cases and Data Sets <br>
