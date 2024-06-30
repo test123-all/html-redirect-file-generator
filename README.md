@@ -18,7 +18,7 @@ options:
 ```
 
 <b>DISCLAIMER:</b> <br>
-This software is in a early proof of concept phase and mentioned in the ... paper. If you want to pay credit to this software in its current raw proof of concept state please cite the paper. <br>
+This software is in a early proof of concept phase and mentioned in the https://preprints.inggrid.org/repository/view/40/ paper. If you want to pay credit to this software in its current raw proof of concept state please cite the paper. <br>
 <br>
 Since this software is in a early proof of concept phase it is not commented out sufficiently yet, the functional segregation isn't good and in conclusion the function and variable names might be subject to siginificant change in the future. Therefore the backwards compatbility of the API won't be granted for now. <br>
 <br>
