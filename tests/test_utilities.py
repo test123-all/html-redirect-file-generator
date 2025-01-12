@@ -46,7 +46,7 @@ class TestUtilities(unittest.TestCase):
             utilities.format_git_repository_URL_to_https(input_URL)
 
     def test_format_git_repository_URL_to_https_04(self):
-        # Test for URLs wit a token like the ones from GitLab
+        # Test for URLs wit a token like the ones from GitLab.
         input_URL = b'https://gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator.git\n'
         target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator'
 
@@ -54,7 +54,7 @@ class TestUtilities(unittest.TestCase):
         self.assertEqual(target_output_URL, utilities.format_git_repository_URL_to_https(input_URL))
 
     def test_format_git_repository_URL_to_https_05(self):
-        # Test for git-URLs wit a token like the ones from GitLab
+        # Test for git-URLs wit a token like the ones from GitLab.
         input_URL = b'git@gitlab-ci-token:[MASKED]@git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator.git\n'
         target_output_URL = 'https://git.rwth-aachen.de/sebastian.neumeier/html-redirect-file-generator'
 
@@ -76,24 +76,23 @@ class Test_check_if_string_is_UUID(unittest.TestCase):
         self.assertTrue(utilities.check_if_string_is_UUID(UUID_string))
 
     def test_02(self):
-        # Wrong quantity of hex decimal digits in the last block
+        # Wrong quantity of hex decimal digits in the last block.
         wrong_UUID_string = '0184ebd9-988b-7bba-83e4-90bf1352'
 
         # Test the function for correct output.
         self.assertFalse(utilities.check_if_string_is_UUID(wrong_UUID_string))
 
     def test_03(self):
-        # Wrong quantity of hex decimal blocks
+        # Wrong quantity of hex decimal blocks.
         wrong_UUID_string = '0184ebd9-988b-7bba83e4-90bf1352'
 
         # Test the function for correct output.
         self.assertFalse(utilities.check_if_string_is_UUID(wrong_UUID_string))
 
 
-
 class Test_search_for_hidden_git_directories(unittest.TestCase):
     def test_00(self):
-        input_data_path: [str, path] = Path(f'{directory_path_of_this_test_file}/tests_data').resolve()
+        input_data_path: [str, Path] = Path(f'{directory_path_of_this_test_file}/tests_data').resolve()
 
         target_output_hidden_git_directories_list__paths = [f'{directory_path_of_this_test_file}/tests_data/data_set_01_data_repository_html_redirect_file_generator/',
                                                             f'{directory_path_of_this_test_file}/tests_data/data_set_02_data_repository_html_redirect_file_generator/',
@@ -106,6 +105,7 @@ class Test_search_for_hidden_git_directories(unittest.TestCase):
             output_hidden_git_directories_list__paths.append(item[0])
 
         self.assertEqual(target_output_hidden_git_directories_list__paths.sort(), output_hidden_git_directories_list__paths.sort())
+
 
 class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
     maxDiff = None
@@ -147,7 +147,6 @@ class Test_get_repository_URL_and_path_pairs(unittest.TestCase):
         self.assertEqual(target_output_URL_path_pairs_list.sort(key=operator.itemgetter('repository_URL')), output_URL_path_pairs_list.sort(key=operator.itemgetter('repository_URL')))
 
 
-
 class Test_get_leaf_ID_directories_list(unittest.TestCase):
     def test_00(self):
         """ Check number of ID folders"""
@@ -160,6 +159,7 @@ class Test_get_leaf_ID_directories_list(unittest.TestCase):
 
         self.assertEqual(TARGET_NUMBER_ID_DIRECTORIES, len(leaf_ID_directories_list))
         # self.assertEqual(['test'], leaf_ID_directories_list)
+
 
 class Test__generate_html_redirect_files_for_every_file_in_leaf_ID_directory(unittest.TestCase):
     example_tuple = (

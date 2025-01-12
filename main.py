@@ -13,6 +13,7 @@ def setup_CLI() -> list:
     parser.add_argument("generated_files_output_path")
     args = parser.parse_args()
 
+    # FIXME: TODO: the args variable seem to be of type Namespace and not list.
     return args
 
 def main():

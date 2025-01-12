@@ -1,5 +1,4 @@
 from pathlib import Path
-import shutil
 import os
 import subprocess
 
@@ -7,7 +6,7 @@ import subprocess
 def get_repository_URL_and_path_pairs(input_data_path: [str, Path]) -> list:
     list_of_hidden_git_directories = search_for_hidden_git_directories(input_data_path=input_data_path)
 
-    # Get all the repository urls
+    # Get the URL path pair of the main git directory/data repository.
     data_repository_URL_path_pairs_list = []
     sp = subprocess.run(['git', 'config', '--get', 'remote.origin.url'], capture_output=True, cwd=input_data_path)
     d = {
@@ -17,6 +16,7 @@ def get_repository_URL_and_path_pairs(input_data_path: [str, Path]) -> list:
 
     data_repository_URL_path_pairs_list.append(d)
 
+    # Get all the URL path pairs of the nested git directories/data repositories.
     for hidden_git_directory_item in list_of_hidden_git_directories:
         sp = subprocess.run(['git', 'config', '--get', 'remote.origin.url'], capture_output=True, cwd=hidden_git_directory_item[0])
         d = {
@@ -30,7 +30,7 @@ def get_repository_URL_and_path_pairs(input_data_path: [str, Path]) -> list:
 
 def search_for_hidden_git_directories(input_data_path: [str, Path]) -> list:
     walked_directories = os.walk(input_data_path)
-    # Search for ".git" directories to identify git repositories
+    # Search for ".git" directories to identify git [data] repositories
     list_of_hidden_git_directories = []
     for item in walked_directories:
         if '.git' in item[2]:
@@ -50,9 +50,9 @@ def search_for_hidden_git_directories(input_data_path: [str, Path]) -> list:
 def format_git_repository_URL_to_https(URL: bytes) -> str:
     decoded_URL = URL.decode('UTF-8')
 
-    # Remove special characters
-    # Decide wether it is a git or https URL
-    # TODO: WARN: Since there are two functions that split on a @ this might cause serious problems! I don't have
+    # Remove special characters and
+    # decide wether it is a git or https URL.
+    # TODO: WARN: Since there are two functions that split on a @ this might cause serious problems! There aren't
     #             enough testcases at hand at the moment to test all possibilities thoroughly.
     if ('gitlab-ci-token' in decoded_URL
             and not 'git@' in decoded_URL):
@@ -96,19 +96,23 @@ def get_customized_html_template(url: str) -> str:
 
 
 def check_if_string_is_UUID(input_string: str) -> bool:
+    # First check if the string follows the amount of numbers of the UUID convention.
     # 8-4-4-4-12
     seperated_string = input_string.split('-')
 
     if len(seperated_string) != 5:
         return False
 
-    if not (    len(seperated_string[0]) == 8
+    if not (
+                len(seperated_string[0]) == 8
                 and len(seperated_string[1]) == 4
                 and len(seperated_string[2]) == 4
                 and len(seperated_string[3]) == 4
                 and len(seperated_string[4]) == 12
             ):
         return False
+
+    # TODO: Check if every symbol is a valid hexadecimal number digit.
 
     return True
 
@@ -125,6 +129,7 @@ def get_leaf_ID_directories_list(data_repository_URL_path_pairs_list: list) -> l
 
         walked_directories = os.walk(data_repository_URL_path_pair['path'])
 
+        # URGENT: FIXME: TODO: Refactor the following messy loop.
         for item in walked_directories:
             # If the path is part of a different repository continue
             # Woran merke ich, dass das Teil eines anderes Repositortires ist? -> wenn der aktuelle Pfad teil eines der anderen repository Pfade ist
@@ -172,9 +177,9 @@ def _generate_html_redirect_files_for_every_file_in_leaf_ID_directory(leaf_ID_di
     # 1ed6c963-669f-62b7-8af6-3727686f020d.md.html
     file_name_prefix = leaf_ID_directory_dict_item['item_tuple'][0].split('/')[-1]
 
-    # Create file for the repository ID redirect
+    # Create file for the repository ID redirect.
     file_path: str = f'{output_generated_files_directory_path}/{file_name_prefix}.html'
-    # Get the relative file path of the repository
+    # Get the relative file path of the repository.
     repository_name = leaf_ID_directory_dict_item['repository_URL'].split('/')[-1]
     relative_repository_path = leaf_ID_directory_dict_item['item_tuple'][0].split(f'{repository_name}/')[-1]
     file_url: str = f"{leaf_ID_directory_dict_item['repository_URL']}/-/tree/{BRANCH_TAG}/{relative_repository_path}"
@@ -184,7 +189,7 @@ def _generate_html_redirect_files_for_every_file_in_leaf_ID_directory(leaf_ID_di
         f.write(get_customized_html_template(file_url))
 
 
-    # Create files for the raw redirects
+    # Create files for the raw redirects.
     for file_item in leaf_ID_directory_dict_item['item_tuple'][2]:
         file_name_suffix = file_item.split('.')[-1]
         if file_name_suffix in SUPPORTED_RAW_FILE_EXTENSIONS:
