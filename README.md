@@ -62,6 +62,7 @@ options:
 ```
 TODO: Add an example with the GitLab CI/CD runner on how this package is used in combination with it.
 
+
 ## Possible Improvements:
 The following list includes possible improvements that have been identified up to this version:
 1. TODO: Extensive documentation beside the paper how the redirects work and why someone wants or needs to use them. -> What added value provides this python package?
